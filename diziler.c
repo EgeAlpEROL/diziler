@@ -1,10 +1,10 @@
 #include <stdio.h>
-#define UZUN 5
+#define LENGTH 5
 
-int enKucuk(int matris[UZUN])
+int min(int matris[LENGTH])
 {
     int min = matris[0];
-    for (int i = 0; i < UZUN; i++)
+    for (int i = 0; i < LENGTH; i++)
     {
         if(min > matris[i])
         {
@@ -14,10 +14,10 @@ int enKucuk(int matris[UZUN])
     return min;
 }
 
-int enBuyuk(int matris[UZUN])
+int max(int matris[LENGTH])
 {
     int max = matris[0];
-    for (int i = 0; i < UZUN; i++)
+    for (int i = 0; i < LENGTH; i++)
     {
         if(max < matris[i])
         {
@@ -27,11 +27,11 @@ int enBuyuk(int matris[UZUN])
     return max;
 }
 
-int ikinciBuy(int matris[UZUN])
+int secondMax(int matris[LENGTH])
 {
     int max = matris[1];
     int secondMax = matris[0];
-    for (int i = 0; i < UZUN; i++)
+    for (int i = 0; i < LENGTH; i++)
     {
         if(max > matris[i])
         {
@@ -42,17 +42,17 @@ int ikinciBuy(int matris[UZUN])
     return secondMax;
 }
 
-int biggerAvgCount(int matris[UZUN])
+int biggerAvgCount(int matris[LENGTH])
 {
     double avg = 0;
-    for (int i = 0; i < UZUN; i++)
+    for (int i = 0; i < LENGTH; i++)
     {
         avg = avg + matris[i];
     }
-    avg = avg / UZUN;
+    avg = avg / LENGTH;
 
     int biggerThan = 0;
-    for (int i = 0; i < UZUN; i++)
+    for (int i = 0; i < LENGTH; i++)
     {
         if (matris[i] > avg)
         {
@@ -62,18 +62,17 @@ int biggerAvgCount(int matris[UZUN])
     return biggerThan;
 }
 
-void smallerAvgNums(int matris[UZUN])
+void smallerAvgNums(int matris[LENGTH])
 {
     double avg = 0;
-    for (int i = 0; i < UZUN; i++)
+    for (int i = 0; i < LENGTH; i++)
     {
         avg = avg + matris[i];
     }
-    avg = avg / UZUN;
+    avg = avg / LENGTH;
 
     int count = 0;
-    int numbers[UZUN]; //Uzundan az olacak ama garanti olsun
-    for (int i = 0; i < UZUN; i++)
+    for (int i = 0; i < LENGTH; i++)
     {
         if (matris[i] > avg)
         {
@@ -82,10 +81,10 @@ void smallerAvgNums(int matris[UZUN])
     }
 }
 
-int dahaBuyuklerinToplami(int matris[UZUN], int sayi)
+int dahaBuyuklerinToplami(int matris[LENGTH], int sayi)
 {
     int toplam = 0;
-    for (int i = 0; i < UZUN; i++)
+    for (int i = 0; i < LENGTH; i++)
     {
         if(sayi < matris[i])
         {
@@ -95,23 +94,23 @@ int dahaBuyuklerinToplami(int matris[UZUN], int sayi)
     return toplam;
 }
 
-int dahaBuyuklerinOrtalamasi(int matris[UZUN], int sayi)
+int dahaBuyuklerinOrtalamasi(int matris[LENGTH], int sayi)
 {
     int toplam = 0;
-    for (int i = 0; i < UZUN; i++)
+    for (int i = 0; i < LENGTH; i++)
     {
         if(sayi < matris[i])
         {
             toplam = toplam + matris[i];
         }
     }
-    float ort = toplam / (float)UZUN;
+    float ort = toplam / (float)LENGTH;
     return ort;
 }
 
 int main(void)
 {
-    int x[UZUN] = {1, 2, 3, 4, 6};
+    int x[LENGTH] = {1, 2, 3, 4, 6};
     int a = ikinciBuy(x);
     printf("%d", a);
 }
