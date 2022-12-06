@@ -19,7 +19,7 @@ int max(int matris[LENGTH])
     int max = matris[0];
     for (int i = 0; i < LENGTH; i++)
     {
-        if(max < matris[i])
+        if (max < matris[i])
         {
             max = matris[i];
         }
@@ -29,14 +29,21 @@ int max(int matris[LENGTH])
 
 int secondMax(int matris[LENGTH])
 {
-    int max = matris[1];
+    int max = matris[0];
+    for (int i = 0; i < LENGTH; i++)
+    {
+        if (max < matris[i])
+        {
+            max = matris[i];
+        }
+    }
+
     int secondMax = matris[0];
     for (int i = 0; i < LENGTH; i++)
     {
-        if(max > matris[i])
+        if (secondMax < matris[i] && secondMax != max)
         {
-            secondMax = max;
-            max = matris[i];
+            secondMax = matris[i];
         }
     }
     return secondMax;
@@ -51,15 +58,15 @@ int biggerAvgCount(int matris[LENGTH])
     }
     avg = avg / LENGTH;
 
-    int biggerThan = 0;
+    int biggerNumbers = 0;
     for (int i = 0; i < LENGTH; i++)
     {
         if (matris[i] > avg)
         {
-            biggerThan++;
+            biggerNumbers++;
         }
     }
-    return biggerThan;
+    return biggerNumbers;
 }
 
 void smallerAvgNums(int matris[LENGTH])
