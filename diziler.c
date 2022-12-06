@@ -118,6 +118,6 @@ int dahaBuyuklerinOrtalamasi(int matris[LENGTH], int sayi)
 int main(void)
 {
     int x[LENGTH] = {1, 2, 3, 4, 6};
-    int a = ikinciBuy(x);
+    int a = secondMax(x);
     printf("%d", a);
 }
