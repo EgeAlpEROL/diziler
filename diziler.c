@@ -41,7 +41,7 @@ int secondMax(int matris[LENGTH])
     int secondMax = matris[0];
     for (int i = 0; i < LENGTH; i++)
     {
-        if (secondMax < matris[i] && secondMax != max)
+        if (secondMax < matris[i] && matris[i] != max)
         {
             secondMax = matris[i];
         }
